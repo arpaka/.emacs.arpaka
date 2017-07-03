@@ -6,6 +6,7 @@
 (defvar my-favorite-package-list
   '(company
     tabbar
+    verilog-mode
     web-mode
     rainbow-mode)
   "packages to be installed")
