@@ -6,6 +6,7 @@
 (defvar my-favorite-package-list
   '(company
     tabbar
+    flycheck
     verilog-mode
     web-mode
     rainbow-mode)
