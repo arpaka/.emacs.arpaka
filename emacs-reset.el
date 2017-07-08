@@ -30,8 +30,10 @@
 (setq show-paren-delay 0)
 (setq show-paren-style 'parenthesis)
 
-;; tab and backspace
+;; tab indent and backspace
 (setq-default tab-width 8) ; 14.19
+(add-hook 'after-change-major-mode-hook
+	  (lambda() (electric-indent-mode -1))) ; 24.4
 (setq backward-delete-char-untabify-method 'hungry) ; 31.6
 
 ;; save
@@ -58,3 +60,4 @@
 ;; disable suspend
 (global-unset-key (kbd "C-z")) ; 49.3.5
 (global-unset-key (kbd "C-x C-z"))
+
