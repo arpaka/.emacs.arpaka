@@ -58,9 +58,18 @@
 (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.css\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
-(setq web-mode-markup-indent-offset 2)
-(setq web-mode-css-indent-offset 2)
-(setq web-mode-code-indent-offset 2)
+(defun my-web-mode-hook ()
+  "hooks for web mode."
+  (setq web-mode-markup-indent-offset 2)
+  (setq web-mode-css-indent-offset 2)
+  (setq web-mode-code-indent-offset 2)
+  ;; auto tag closing, 0=no, 1='</', 2='>' & '</'
+  (setq web-mode-auto-close-style 2)
+  (setq web-mode-tag-auto-close-style 2)
+  ;; disable indent when paste
+  (setq web-mode-enable-auto-indentation nil)
+)
+(add-hook 'web-mode-hook  'my-web-mode-hook)
 
 ;; rainbow-mode
 (require 'rainbow-mode)
